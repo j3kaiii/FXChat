@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.BorderPane?>
+<VBox xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+    <Label text="Логин" />
+    <TextField fx:id="loginField" text="login" />
+    <Label text="Пароль" />
+    <TextField fx:id="passField" text="password" />
+    <FlowPane alignment="CENTER">
+        <Button fx:id="tryToLoginButton" onAction="#tryToAuth" text="Войти" VBox.vgrow="NEVER"/>
+    </FlowPane>
+    <Label fx:id="infoFoReg" text="Для регистрации нового пользователя заполните поля Логин, Пароль и Никнейм"
+           textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS"/>
+    <Label text="Никнейм" />
+    <TextField fx:id="nicknameField" text="nickname" />
+    <FlowPane alignment="CENTER">
+        <Button fx:id="tryToRegButton" onAction="#tryToReg" text="Регистрация" VBox.vgrow="NEVER"/>
+    </FlowPane>
+
+    <FlowPane alignment="CENTER">
+    <Label fx:id="infoFoDel" text="Для удаления учетной записи заполните все поля"
+           textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS"/>
+    </FlowPane>
+
+    <BorderPane VBox.vgrow="ALWAYS">
+        <bottom>
+            <FlowPane alignment="CENTER">
+                <Button fx:id="deleteUser" onAction="#deleteUser" text="Удаление учетки" VBox.vgrow="NEVER"/>
+            </FlowPane>
+        </bottom>
+
+    </BorderPane>
+
+
+</VBox>
+
