@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox alignment="center" stylesheets="@../styles/style.css"
+      xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="client.Controller">
+    <GridPane fx:id="upperPanel" alignment="TOP_CENTER" hgap="2" vgap="2">
+
+            <TextField id="textField" fx:id="loginField" promptText="Логин"
+            GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS"/>
+            <PasswordField id="textField" fx:id="passwordField" onAction="#tryToAuth" promptText="Пароль"
+            GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS"/>
+            <Button id="button" onAction="#tryToAuth" text="Авторизоваться"
+            GridPane.columnIndex="2" GridPane.rowIndex="0" minWidth="150"/>
+
+            <TextField id="textField" fx:id="nicknameField" promptText="Никнейм"
+            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Button id="button" onAction="#tryToReg" text="Создать учетку"
+            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Button id="button" onAction="#tryToDel" text="Удалить учетку"
+            GridPane.columnIndex="2" GridPane.rowIndex="1" minWidth="150"/>
+
+
+
+
+    </GridPane>
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS">
+            <TextArea id="textField" fx:id="chatArea" editable="false" VBox.vgrow="ALWAYS" />
+            <HBox fx:id="bottomPanel" managed="false" visible="false">
+                <TextField id="textField" fx:id="msgField" onAction="#sendMsg" promptText="Введите сообщение..." HBox.hgrow="ALWAYS" />
+                <Button id="button" onAction="#sendMsg" text="Отправить" />
+            </HBox>
+        </VBox>
+        <ListView id="textField" fx:id="clientsList" onMouseClicked="#selectClient" prefWidth="200" />
+        <!--<Label fx:id="userName" styleClass="userLogin" /> -->
+    </HBox>
+
+
+</VBox>

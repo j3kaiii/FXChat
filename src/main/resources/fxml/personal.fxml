@@ -1,0 +1,10 @@
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+
+<VBox fx:controller="client.PersonalController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <TextArea fx:id="textArea" VBox.vgrow="ALWAYS"/>
+    <Button text="Send Message" fx:id="btn" onAction="#btnClick"/>
+</VBox>
