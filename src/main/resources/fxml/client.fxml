@@ -7,8 +7,18 @@
 <VBox alignment="center" stylesheets="@../styles/style.css"
       xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="client.Controller">
-    <GridPane fx:id="upperPanel" alignment="TOP_CENTER" hgap="2" vgap="2">
 
+    <GridPane fx:id="settings" alignment="TOP_CENTER" hgap="2">
+        <Label id="label" fx:id="setLabel" text="Укажите IP сервера"
+               GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+        <TextField id="textField" fx:id="ipField" promptText="0.0.0.0"
+                   GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.hgrow="ALWAYS"/>
+        <Button id="button" onAction="#setConnection" text="Подтвердить"
+                GridPane.columnIndex="2" GridPane.rowIndex="1" minWidth="150"/>
+    </GridPane>
+
+    <GridPane fx:id="upperPanel" alignment="TOP_CENTER" hgap="2" vgap="2"
+    managed="false" visible="false">
             <TextField id="textField" fx:id="loginField" promptText="Логин"
             GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS"/>
             <PasswordField id="textField" fx:id="passwordField" onAction="#tryToAuth" promptText="Пароль"
@@ -22,11 +32,8 @@
             GridPane.columnIndex="1" GridPane.rowIndex="1"/>
             <Button id="button" onAction="#tryToDel" text="Удалить учетку"
             GridPane.columnIndex="2" GridPane.rowIndex="1" minWidth="150"/>
-
-
-
-
     </GridPane>
+
     <HBox VBox.vgrow="ALWAYS">
         <VBox HBox.hgrow="ALWAYS">
             <TextArea id="textField" fx:id="chatArea" editable="false" VBox.vgrow="ALWAYS" />

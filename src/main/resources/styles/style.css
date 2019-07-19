@@ -1,6 +1,7 @@
 
 .root {
     -fx-background-color: linear-gradient(#98a8bd 0%, #8195af 25%, #6d86a4 100%);
+    -fx-padding: 2px;
 }
 
 .button {

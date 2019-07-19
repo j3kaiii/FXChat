@@ -56,15 +56,17 @@ public class AuthService {
         return null;
     }
 
-    public static void deleteUser(String login, String pass, String nick) {
+    public static boolean deleteUser(String login, String pass, String nick) {
         String sql = String.format("DELETE FROM main  WHERE login ='%s' AND password = '%s' AND nickname = '%s'",
                 login,pass.hashCode(),nick);
         System.out.println(sql);
         try {
             stmt.executeUpdate(sql);
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     public static StringBuilder getHistoryChat() {

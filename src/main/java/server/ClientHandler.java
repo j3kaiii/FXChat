@@ -55,7 +55,7 @@ public class ClientHandler {
                                 // регистрация
                             } else if (str.startsWith("/addUser")) {
                                 String[] tokens = str.split(" ");
-                                if (AuthService.addNewUser(tokens[1], tokens[3], tokens[2])) {
+                                if (AuthService.addNewUser(tokens[1], tokens[2], tokens[3])) {
                                     sendMsg("/regok");
                                 } else {
                                     sendMsg("Такой пользователь существует");
@@ -63,7 +63,11 @@ public class ClientHandler {
                                 // удаление
                             } else if (str.startsWith("/delete ")) {
                                 String[] tokens = str.split(" ");
-                                AuthService.deleteUser(tokens[1],tokens[2], tokens[3]);
+                                if(AuthService.deleteUser(tokens[1],tokens[2], tokens[3])) {
+                                    sendMsg("/deleteok");
+                                } else {
+                                    sendMsg("Некорректные данные / пользователь не существует");
+                                }
                             }
                         }
 
@@ -134,6 +138,10 @@ public class ClientHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void autorization() {
+
     }
 
     // проверяем черный список
