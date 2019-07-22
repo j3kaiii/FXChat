@@ -115,12 +115,13 @@ public class Controller implements Initializable {
                     while (true) {
                         String str = in.readUTF();
                         if (str.startsWith("/deleteok")) {
-                            chatArea.appendText("Пользователь удален");
+                            chatArea.appendText("Пользователь удален\n");
                         }
                         else if (str.startsWith("/regok")) {
-                            chatArea.appendText("Пользователь добавлен. Введите логин и пароль для входа.");
+                            chatArea.appendText("Пользователь добавлен. Введите логин и пароль для входа.\n");
                         }
                         else if (str.startsWith("/authok")) {
+                            chatArea.clear();
                             setAuthorized(true);
                             break;
                         } else {
@@ -188,10 +189,10 @@ public class Controller implements Initializable {
     }
 
     public void selectClient(MouseEvent mouseEvent) {
-        if(mouseEvent.getClickCount() == 2) {
+
             MiniStage ms = new MiniStage(clientsList.getSelectionModel().getSelectedItem(), out, textAreas);
             ms.show();
-        }
+
     }
 
     public void setConnection() {

@@ -21,7 +21,7 @@ public class MiniStage extends Stage {
         this.parentList = parentList;
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("fxml/personal.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/fxml/personal.fxml"));
             setTitle("personal window");
             Scene scene = new Scene(root, 300, 400);
             setScene(scene);
